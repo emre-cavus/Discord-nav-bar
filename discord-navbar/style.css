@@ -1,0 +1,133 @@
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    background: var(--bg-light-color);
+}
+:root{
+    --bg-light-color:#36393f;
+    --bg-dark-color:#202225;
+    --active:#3ba55d;
+}
+
+nav {
+    background: var(--bg-dark-color);
+    float: left;
+    height: 100%;
+    width: 72px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 12px;
+}
+
+nav a {
+    margin-bottom: 5px;
+    /* background-image: url("src/pp.jpg"); */
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-light-color);
+    position: relative;
+    
+    transition: border-radius 250ms, background 250ms;
+}
+
+nav hr {
+    display: block;
+    width: 32px;
+    height: 2px;
+    border-radius: 196px;
+    border: none;
+    background: #36393f;
+}
+
+nav a:hover,
+
+nav a.active {
+    border-radius: 25%;
+    background: var(--active);
+}
+
+nav a::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 200px;
+    background: white;
+
+    position: absolute;
+    right: 57px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: height 250ms;
+}
+
+nav a:hover::after {
+    height: 18px;
+}
+
+nav a.active::after {
+    height: 32px;
+}
+
+nav a .tooltip {
+
+    font-family: sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+
+    padding: 10px 12px;
+    margin-left: 10px;
+    border-radius: 8px;
+    
+    display: none;
+    width: max-content;
+    
+    background: var(--bg-dark-color);
+    
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav a:hover .tooltip {
+    display: block;
+}
+
+nav a .tooltip::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top:   5px solid transparent;
+    border-bottom:5px solid transparent; 
+    border-right: 5px solid var(--bg-dark-color);
+    
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.icons{
+    padding: 14px;
+}
+.discord-icon{
+    margin-top: -1.75px;
+    padding: 15px;
+    margin-left: -4.70px;
+}
